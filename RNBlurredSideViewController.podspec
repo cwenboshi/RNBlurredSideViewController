@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "RNBlurredSideViewController"
-  s.version          = "1.0.0"
+  s.version          = "1.0.1"
   s.summary          = "A side view controller with a dynamic blurred background effect which is similar to the iOS 7 control center."
   s.homepage = 'https://github.com/cwenboshi/RNBlurredSideViewController'
   s.license          = 'MIT'

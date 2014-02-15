@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C253021F18AF18CA0005325C /* RNBlurredSideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C253021E18AF18CA0005325C /* RNBlurredSideViewController.m */; };
 		C2DCE76918AC922500966E50 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2DCE76818AC922500966E50 /* Foundation.framework */; };
 		C2DCE76B18AC922500966E50 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2DCE76A18AC922500966E50 /* CoreGraphics.framework */; };
 		C2DCE76D18AC922500966E50 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2DCE76C18AC922500966E50 /* UIKit.framework */; };
@@ -22,7 +23,6 @@
 		C2DCE79218AC922600966E50 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C2DCE79018AC922600966E50 /* InfoPlist.strings */; };
 		C2DCE79418AC922600966E50 /* RNBlurredSideViewControllerExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DCE79318AC922600966E50 /* RNBlurredSideViewControllerExampleTests.m */; };
 		C2DCE7A518AC979700966E50 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2DCE7A418AC979700966E50 /* Accelerate.framework */; };
-		C2DCE7AE18ADC08700966E50 /* RNBlurredSideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2DCE7AD18ADC08700966E50 /* RNBlurredSideViewController.m */; };
 		C2DCE7B018ADC71000966E50 /* bkg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C2DCE7AF18ADC71000966E50 /* bkg@2x.jpg */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C253021D18AF18CA0005325C /* RNBlurredSideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNBlurredSideViewController.h; sourceTree = "<group>"; };
+		C253021E18AF18CA0005325C /* RNBlurredSideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNBlurredSideViewController.m; sourceTree = "<group>"; };
 		C2DCE76518AC922500966E50 /* RNBlurredSideViewControllerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RNBlurredSideViewControllerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2DCE76818AC922500966E50 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C2DCE76A18AC922500966E50 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -57,8 +59,6 @@
 		C2DCE79118AC922600966E50 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C2DCE79318AC922600966E50 /* RNBlurredSideViewControllerExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNBlurredSideViewControllerExampleTests.m; sourceTree = "<group>"; };
 		C2DCE7A418AC979700966E50 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
-		C2DCE7AC18ADC08700966E50 /* RNBlurredSideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNBlurredSideViewController.h; sourceTree = "<group>"; };
-		C2DCE7AD18ADC08700966E50 /* RNBlurredSideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNBlurredSideViewController.m; sourceTree = "<group>"; };
 		C2DCE7AF18ADC71000966E50 /* bkg@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bkg@2x.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,8 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				C2DCE7AF18ADC71000966E50 /* bkg@2x.jpg */,
-				C2DCE7AC18ADC08700966E50 /* RNBlurredSideViewController.h */,
-				C2DCE7AD18ADC08700966E50 /* RNBlurredSideViewController.m */,
+				C253021D18AF18CA0005325C /* RNBlurredSideViewController.h */,
+				C253021E18AF18CA0005325C /* RNBlurredSideViewController.m */,
 				C2DCE77718AC922500966E50 /* AppDelegate.h */,
 				C2DCE77818AC922500966E50 /* AppDelegate.m */,
 				C2DCE77A18AC922600966E50 /* Main.storyboard */,
@@ -262,7 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2DCE7AE18ADC08700966E50 /* RNBlurredSideViewController.m in Sources */,
+				C253021F18AF18CA0005325C /* RNBlurredSideViewController.m in Sources */,
 				C2DCE77F18AC922600966E50 /* ViewController.m in Sources */,
 				C2DCE77918AC922500966E50 /* AppDelegate.m in Sources */,
 				C2DCE77518AC922500966E50 /* main.m in Sources */,

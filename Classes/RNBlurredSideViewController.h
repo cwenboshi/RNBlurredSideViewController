@@ -1,6 +1,6 @@
 //
 //  RNBlurredSideViewController.h
-//  RNBlurredSideViewControllerExample
+//  RNBlurredSideViewController
 //
 //  Created by Wenbo Shi on 2/12/14.
 //  Copyright (c) 2014 Zzuumm. All rights reserved.
@@ -8,13 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import <Accelerate/Accelerate.h>
+#import <QuartzCore/QuartzCore.h>
 
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
-#define DEFAULT_LEFT_SIZE SCREEN_WIDTH-60
-#define DEFAULT_RIGHT_SIZE SCREEN_WIDTH-60
+#define DEFAULT_LEFT_WIDTH SCREEN_WIDTH-60
+#define DEFAULT_RIGHT_WIDTH SCREEN_WIDTH-60
 #define DEFAULT_ALPHA 0.5
+#define DEFAULT_DIM_ALPHA 0.4
 
 @interface UIImage (RNBlurredSideViewController)
 
@@ -47,6 +49,9 @@
 
 //The container view of the right side view.
 @property (nonatomic, retain) UIView *rightContentView;
+
+//Dim the background when swiping. Default is YES.
+@property (nonatomic, assign) BOOL dim;
 
 
 - (void)openLeftView:(BOOL)animated;

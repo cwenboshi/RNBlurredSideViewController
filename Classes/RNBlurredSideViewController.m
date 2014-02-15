@@ -1,13 +1,12 @@
 //
 //  RNBlurredSideViewController.m
-//  RNBlurredSideViewControllerExample
+//  RNBlurredSideViewController
 //
 //  Created by Wenbo Shi on 2/12/14.
 //  Copyright (c) 2014 Zzuumm. All rights reserved.
 //
 
 #import "RNBlurredSideViewController.h"
-#import <QuartzCore/QuartzCore.h>
 
 
 @implementation UIImage (RNBlurredSideViewController)
@@ -90,6 +89,8 @@
     UIImage *blurredImage;
     UIImageView *blurredImageView;
     UIView *blurredOverlayView;
+    
+    UIView *backgroundView;
 }
 
 @synthesize leftWidth = _leftWidth;
@@ -99,6 +100,7 @@
 @synthesize leftContentView = _leftContentView;
 @synthesize centerContentView = _centerContentView;
 @synthesize rightContentView = _rightContentView;
+@synthesize dim = _dim;
 
 - (id)initWithCoder:(NSCoder*)aDecoder
 {
@@ -125,10 +127,11 @@
 }
 
 - (void)setDefault{
-    self.leftWidth = DEFAULT_LEFT_SIZE;
-    self.rightWidth = DEFAULT_RIGHT_SIZE;
+    self.leftWidth = DEFAULT_LEFT_WIDTH;
+    self.rightWidth = DEFAULT_RIGHT_WIDTH;
     self.sideViewAlpha = DEFAULT_ALPHA;
     self.sideViewTintColor = [UIColor blackColor];
+    self.dim = YES;
 }
 
 
@@ -140,7 +143,12 @@
 }
 
 - (void)loadScrollView{
-    self.view.backgroundColor = [UIColor colorWithPatternImage:self.backgroundImage];
+    self.view.backgroundColor = [UIColor clearColor];
+    
+    backgroundView = [[UIView alloc] initWithFrame:self.view.frame];
+    backgroundView.backgroundColor = [UIColor colorWithPatternImage:self.backgroundImage];
+    [self.view addSubview:backgroundView];
+    
     blurredImage = [self.backgroundImage blurredImageWithRadius:20 iterations:10 tintColor:nil];
     
     
@@ -264,23 +272,23 @@
             blurredImageView.frame = blurredRect;
             blurredImageView.contentMode = UIViewContentModeTopLeft;
             blurredOverlayView.frame = blurredImageView.frame;
+            if (self.dim){
+                backgroundView.alpha = DEFAULT_DIM_ALPHA+(1-DEFAULT_DIM_ALPHA)*(1-(self.leftWidth-scrollView.contentOffset.x)/self.leftWidth);
+                self.centerContentView.alpha = backgroundView.alpha;
+            }
         }
         else if (scrollView.contentOffset.x >= self.leftWidth){
             CGRect blurredRect = CGRectMake(SCREEN_WIDTH - (scrollView.contentOffset.x-self.leftWidth), 0, scrollView.contentOffset.x-self.leftWidth, SCREEN_HEIGHT);
             blurredImageView.frame = blurredRect;
             blurredImageView.contentMode = UIViewContentModeTopRight;
             blurredOverlayView.frame = blurredImageView.frame;
+            if (self.dim){
+                backgroundView.alpha = DEFAULT_DIM_ALPHA+(1-DEFAULT_DIM_ALPHA)*(1-(scrollView.contentOffset.x-self.leftWidth)/self.rightWidth);
+                self.centerContentView.alpha = backgroundView.alpha;
+            }
         }
         
     }
-}
-
-
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
