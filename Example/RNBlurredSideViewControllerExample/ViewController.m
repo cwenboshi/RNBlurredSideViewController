@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()<UITableViewDataSource>
+@interface ViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 @end
 
@@ -40,12 +40,14 @@
     leftTableView.backgroundColor = [UIColor clearColor];
     leftTableView.tableFooterView = leftTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     leftTableView.dataSource = self;
+    leftTableView.delegate = self;
     [self.leftContentView addSubview:leftTableView];
     
     rightTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 20, self.leftContentView.frame.size.width, self.leftContentView.frame.size.height-20)];
     rightTableView.backgroundColor = [UIColor clearColor];
     rightTableView.tableFooterView = leftTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     rightTableView.dataSource = self;
+    rightTableView.delegate = self;
     [self.rightContentView addSubview:rightTableView];
 }
 
@@ -65,6 +67,11 @@
     cell.textLabel.text = @"Item";
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self closeSideView:YES];
 }
 
 - (void)didReceiveMemoryWarning
