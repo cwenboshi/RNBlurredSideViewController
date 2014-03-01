@@ -2,14 +2,7 @@
 
 RNBlurredSideViewController is a side view controller with a dynamic blurred background effect when swiping similar to the iOS 7 control center. It can be used to show views on the side like the Facebook or Path app. The unique feature of RNBlurredSideViewController is that it can blur the side view background dynamically when swiping which is similar to the iOS 7 control center. The implementation of the blur effect is not based on UIToolbar. The blur effect can be customized.
 
-<<<<<<< HEAD
 ![](http://postimg.org/image/c1yc6seo5/)
-=======
-![](http://i57.tinypic.com/j7c9zk.png)
-![](http://i58.tinypic.com/23ubl1t.png)
-![](http://i60.tinypic.com/2ibdlkj.png)
-
->>>>>>> 009b82ba100b020653012620d6841f45655b4529
 
 ## Usage
 
