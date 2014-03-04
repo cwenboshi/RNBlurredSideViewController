@@ -36,16 +36,17 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
     leftTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 20, self.leftContentView.frame.size.width, self.leftContentView.frame.size.height-20)];
     leftTableView.backgroundColor = [UIColor clearColor];
-    leftTableView.tableFooterView = leftTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    leftTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     leftTableView.dataSource = self;
     leftTableView.delegate = self;
     [self.leftContentView addSubview:leftTableView];
     
-    rightTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 20, self.leftContentView.frame.size.width, self.leftContentView.frame.size.height-20)];
+    rightTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 20, self.rightContentView.frame.size.width, self.rightContentView.frame.size.height-20)];
     rightTableView.backgroundColor = [UIColor clearColor];
-    rightTableView.tableFooterView = leftTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    rightTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     rightTableView.dataSource = self;
     rightTableView.delegate = self;
     [self.rightContentView addSubview:rightTableView];

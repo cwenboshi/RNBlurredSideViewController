@@ -266,7 +266,7 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
 	if ([scrollView isEqual:mainScrollView]){
-        if (scrollView.contentOffset.x <= self.leftWidth){
+        if (scrollView.contentOffset.x < self.leftWidth){
             CGRect blurredRect = CGRectMake(0, 0, self.leftWidth-scrollView.contentOffset.x, SCREEN_HEIGHT);
             //UIImage *croppedBlurredImage = [blurredImage croppedImage:blurredRect];
             blurredImageView.frame = blurredRect;
@@ -277,7 +277,7 @@
                 self.centerContentView.alpha = backgroundView.alpha;
             }
         }
-        else if (scrollView.contentOffset.x >= self.leftWidth){
+        else if (scrollView.contentOffset.x > self.leftWidth){
             CGRect blurredRect = CGRectMake(SCREEN_WIDTH - (scrollView.contentOffset.x-self.leftWidth), 0, scrollView.contentOffset.x-self.leftWidth, SCREEN_HEIGHT);
             blurredImageView.frame = blurredRect;
             blurredImageView.contentMode = UIViewContentModeTopRight;

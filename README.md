@@ -3,8 +3,8 @@
 RNBlurredSideViewController is a side view controller with a dynamic blurred background effect when swiping similar to the iOS 7 control center. It can be used to show views on the side like the Facebook or Path app. The unique feature of RNBlurredSideViewController is that it can blur the side view background dynamically when swiping which is similar to the iOS 7 control center. The implementation of the blur effect is not based on UIToolbar. The blur effect can be customized.
 
 ![](http://i57.tinypic.com/j7c9zk.png)
-![](http://i60.tinypic.com/2ibdlkj.png)
 ![](http://i58.tinypic.com/23ubl1t.png)
+![](http://i60.tinypic.com/2ibdlkj.png)
 
 ## Usage
 
@@ -36,18 +36,19 @@ Add your views to self.leftContentView, self.centerContentView, and self.rightCo
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
     leftTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 20, self.leftContentView.frame.size.width, self.leftContentView.frame.size.height-20)];
     leftTableView.backgroundColor = [UIColor clearColor];
+    leftTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     leftTableView.dataSource = self;
     leftTableView.delegate = self;
-    leftTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     [self.leftContentView addSubview:leftTableView];
     
-    rightTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 20, self.leftContentView.frame.size.width, self.leftContentView.frame.size.height-20)];
+    rightTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 20, self.rightContentView.frame.size.width, self.rightContentView.frame.size.height-20)];
     rightTableView.backgroundColor = [UIColor clearColor];
+    rightTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     rightTableView.dataSource = self;
     rightTableView.delegate = self;
-    rightTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     [self.rightContentView addSubview:rightTableView];
     
 }
